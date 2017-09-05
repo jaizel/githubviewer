@@ -1,0 +1,75 @@
+<!-- do not use ng-controller on this div, since it will be done automatically by app.js -->
+<!-- if you do, the controller will run twice! -->
+  
+<div>
+   
+    <h1>{{ reponame }}</h1><br>
+       
+    <div ng-hide="!repoDetailError">
+        {{ repoDetailError }}
+    </div>
+       
+    <div ng-hide="repoDetailError">
+        
+        <div class="table table-striped">
+            <table class="table-bordered">
+                <tbody>
+                    <tr>
+                        <td>Description</td>
+                        <td>{{ repoDetails.description }}</td>
+                    </tr>
+                    <tr>
+                        <td>Owned By</td>
+                        <td><a href="index.html#!/user/{{ repoDetails.owner.login }}">{{ repoDetails.owner.login }}</a></td>
+                    </tr> 
+                    <tr>
+                        <td>Created on</td>
+                        <td>{{ repoDetails.created_at | date: "longDate" }}</td>
+                    </tr>                                          
+                    <tr>
+                        <td>Github Link</td>
+                        <td><a href ="{{ repoDetails.html_url }}">{{ repoDetails.html_url }}</a></td>
+                    </tr>
+                    <tr>
+                        <td>Stargazers</td>
+                        <td>{{ repoDetails.stargazers_count }}</td>
+                    </tr>  
+                    <tr>
+                        <td>Open Issues</td>
+                        <td><a href="http://github.com/{{username}}/{{reponame}}/issues">{{ repoDetails.open_issues_count }}</a></td>
+                    </tr>
+                    <tr>
+                        <td>Homepage</td>
+                        <td><a href ="{{ repoDetails.homepage }}">{{ repoDetails.homepage }}</a></td>
+                    </tr>                                        
+                </tbody>
+            </table>
+        </div>
+        
+    
+        <a href="#!/user/{{ username }}">&lt&lt Back to User</a>
+        <br><br><br>
+        <h3>Contributors:</h3>
+        
+        <div class="table table-striped">
+            <table class="table-bordered">
+                <thead class="thead-inverse">
+                    <tr>
+                        <th>Avatar</th>
+                        <th>Name</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="contributor in contributors | orderBy:'+login'">
+                        <td><img src="{{ contributor.avatar_url }}" width="100" height="100"></td>                       
+                        <td><a href="index.html#!/user/{{contributor.login}}">{{contributor.login}}</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+    </div>
+       
+    <a href="#!/user/{{ username }}">&lt&lt Back to User</a>
+        
+</div>

@@ -1,0 +1,17 @@
+<!-- do not use ng-controller on this div, since it will be done automatically by app.js -->
+<!-- if you do, the controller will run twice! -->
+
+<div>
+
+    <h5>Search for a Github User:</h5>
+    <div>
+       <form name="searchUser" ng-submit="search(username)">
+           <input type="search" required placeholder="enter a username" ng-model="username">
+           <input type="submit" value="Search">
+       </form>
+
+       <br>
+
+    </div>
+
+</div>

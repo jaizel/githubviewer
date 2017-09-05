@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <title>Github Viewer</title>
+        
+        <!--Tether.io-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/css/tether.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
+
+        <!--jQuery-->
+        <script data-require="jquery@*" data-semver="3.1.1" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+        <!--Bootstrap-->
+        <link data-require="bootstrap@*" data-semver="4.0.5" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+        <script data-require="bootstrap@*" data-semver="4.0.5" src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/js/bootstrap.min.js"></script>
+
+        <!--Angular-->
+        <script data-require="angular.js@1.6.5" data-semver="1.6.5" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular.js"></script>
+        
+        <!--Angular Route-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular-route.js"></script>
+
+        <!--Local CSS-->
+        <link rel="stylesheet" href="style.css">
+        
+        <!--Custom Javascript-->
+        <script src="app.js"></script>
+        <script src="MainController.js"></script>
+        <script src="UserController.js"></script>
+        <script src="RepoController.js"></script>
+
+    </head>
+
+    <body ng-app="githubViewer">
+      
+        <div id="welcome" class="container">
+
+            <h1>GitHub Viewer</h1>
+            <hr><br>
+            
+            <div ng-view>
+               
+               <!-- this area will be controlled by Angular, see app.js for details -->
+                
+            </div>
+            
+            <br><hr>
+            Github Viewer v2.0<br>
+            (c) copyright 2017 by Jason Lunas<br><br>
+            
+        </div>
+
+    </body>
+    
+</html>
